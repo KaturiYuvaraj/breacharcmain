@@ -148,7 +148,6 @@
             navOverlay.className = 'nav-overlay';
             document.body.appendChild(navOverlay);
 
-            // Function to close the mobile menu
             function closeMobileMenu() {
                 mobileMenuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
@@ -156,7 +155,6 @@
                 document.body.classList.remove('no-scroll');
             }
 
-            // Toggle mobile menu on hamburger button click
             mobileMenuBtn.addEventListener('click', function() {
                 this.classList.toggle('active');
                 navLinks.classList.toggle('active');
@@ -164,13 +162,10 @@
                 document.body.classList.toggle('no-scroll');
             });
 
-            // Close mobile menu when clicking the overlay
             navOverlay.addEventListener('click', closeMobileMenu);
 
-            // Detect if the device is mobile (screen width <= 768px)
             const isMobile = window.innerWidth <= 768;
 
-            // Close mobile menu when clicking a nav link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (isMobile) {
